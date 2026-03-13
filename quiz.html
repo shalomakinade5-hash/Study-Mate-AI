@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz - Study Mate AI</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <h1 class="logo">Study Mate AI</h1>
+  <div class="nav-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="profile.html">Profile</a>
+    <a href="quiz.html" class="active">Quiz</a>
+    <a href="login.html" id="logoutBtn">Logout</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <h2>AI Generated Quiz</h2>
+  <p>Test your knowledge!</p>
+
+  <div class="quiz-box">
+    <p id="question">What is the derivative of x²?</p>
+    <div class="options">
+      <button onclick="checkAnswer(this)">x</button>
+      <button onclick="checkAnswer(this)">2x</button>
+      <button onclick="checkAnswer(this)">x²</button>
+      <button onclick="checkAnswer(this)">2</button>
+    </div>
+    <p id="result"></p>
+    <button class="back-btn" onclick="window.location.href='dashboard.html'">Back to Dashboard</button>
+  </div>
+</section>
+
+<script>
+document.getElementById("logoutBtn").addEventListener("click", function(e){
+    e.preventDefault();
+    alert("Logged out! Returning to homepage.");
+    window.location.href = "index.html";
+});
+
+// Quiz logic
+function checkAnswer(btn){
+    const result = document.getElementById("result");
+    if(btn.innerText === "2x"){
+        result.innerHTML = "✅ Correct! You earned 20 coins!";
+    }else{
+        result.innerHTML = "❌ Wrong answer, try again!";
+    }
+}
+</script>
+</body>
+</html>

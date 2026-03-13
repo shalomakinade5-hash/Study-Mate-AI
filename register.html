@@ -333,10 +333,24 @@ body{
 <h2>Create Account</h2>
 <div class="auth-box">
 <form id="registerForm">
-<input type="text" id="name" placeholder="Full Name" required>
-<input type="email" id="email" placeholder="Email Address" required>
-<input type="password" id="password" placeholder="Password" required>
-<button type="submit">Register</button>
+<input type="text" id="fullName" placeholder="Full Name">
+<input type="email" id="email" placeholder="Email">
+<input type="password" id="password" placeholder="Password">
+<button onclick="registerUser()">Register</button>
+
+<script>
+function registerUser() {
+    const name = document.getElementById("fullName").value;
+    if(!name) {
+        alert("Please enter your name!");
+        return;
+    }
+    // Save name to localStorage
+    localStorage.setItem("studentName", name);
+    alert("Registration successful!");
+    window.location.href = "dashboard.html";
+}
+</script>
 </form>
 <p>Already have an account? <a href="login.html">Login here</a></p>
 </div>

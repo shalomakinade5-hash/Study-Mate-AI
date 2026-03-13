@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Profile - Study Mate AI</title>
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <style>
@@ -32,7 +33,8 @@
     font-size:16px;
     margin:5px 0;
 }
-.profile-box button{
+button.back-btn{
+    margin-top:20px;
     background:#b7ff2a;
     border:none;
     border-radius:6px;
@@ -40,34 +42,34 @@
     cursor:pointer;
     font-weight:bold;
 }
-.profile-box button:hover{
+button.back-btn:hover{
     background:#a6e22d;
 }
     </style>
 
 <!-- NAVBAR -->
 <nav class="navbar">
-<h1 class="logo">Study Mate AI</h1>
-<div class="nav-links">
-<a href="dashboard.html">Dashboard</a>
-<a href="login.html" id="logoutBtn">Logout</a>
-</div>
+  <h1 class="logo">Study Mate AI</h1>
+  <div class="nav-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="login.html" id="logoutBtn">Logout</a>
+  </div>
 </nav>
 
-<!-- PROFILE HERO -->
+<!-- PROFILE HERO SECTION -->
 <section class="hero">
-<h2>Welcome, Student!</h2>
-<p>Here’s your profile and learning stats:</p>
+  <h2>Welcome, Student!</h2>
+  <p>Here’s your profile and learning stats:</p>
 
-<div class="profile-box">
-<img src="assets/avatar.png" alt="Avatar" class="avatar">
-<div class="profile-stats">
-<p><strong>Coins:</strong> 120</p>
-<p><strong>Study Streak:</strong> 5 days</p>
-<p><strong>Achievements:</strong> Beginner Mastery Badge</p>
-</div>
-<button onclick="alert('Edit Profile coming soon!')">Edit Profile</button>
-</div>
+  <div class="profile-box">
+    <img src="assets/avatar.png" alt="Avatar" class="avatar">
+    <div class="profile-stats">
+      <p><strong>Coins:</strong> 120</p>
+      <p><strong>Study Streak:</strong> 5 days</p>
+      <p><strong>Achievements:</strong> Beginner Mastery Badge</p>
+    </div>
+    <button class="back-btn" onclick="window.location.href='dashboard.html'">Back to Dashboard</button>
+  </div>
 </section>
 
 <script>
@@ -78,5 +80,6 @@ document.getElementById("logoutBtn").addEventListener("click", function(e){
     window.location.href = "index.html";
 });
 </script>
+
 </body>
 </html>

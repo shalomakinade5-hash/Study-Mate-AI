@@ -1,0 +1,290 @@
+/* ===== GENERAL STYLES ===== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: #020617;
+}
+
+.nav-links a {
+    margin-left: 20px;
+    color: white;
+}
+
+.nav-links a.active {
+    color: #b7ff2a;
+    font-weight: bold;
+    border-bottom: 2px solid #b7ff2a;
+}
+
+/* ===== HERO SECTIONS ===== */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1,
+.hero h2 {
+    color: #b7ff2a;
+}
+
+.hero p {
+    margin: 20px 0;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero button {
+    background: #b7ff2a;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    background: #a6e22d;
+}
+
+/* ===== AUTH BOX (LOGIN / REGISTER) ===== */
+.auth-box {
+    max-width: 350px;
+    margin: 100px auto;
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.auth-box input {
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+    background: #0f172a;
+    color: white;
+}
+
+.auth-box button {
+    background: #b7ff2a;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.auth-box button:hover {
+    background: #a6e22d;
+}
+
+.auth-box p {
+    color: #d1d5db;
+    text-align: center;
+}
+
+/* ===== PROFILE BOX ===== */
+.profile-box {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 0 20px rgba(183, 255, 42, 0.2);
+}
+
+.profile-box .avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid #b7ff2a;
+}
+
+.profile-stats p {
+    color: #d1d5db;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+button.back-btn {
+    margin-top: 20px;
+    background: #b7ff2a;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 15px;
+    font-weight: bold;
+}
+
+button.back-btn:hover {
+    background: #a6e22d;
+}
+
+/* ===== PDF UPLOAD BOX ===== */
+.pdf-box {
+    width: 100%;
+    max-width: 400px;
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 0 20px rgba(183, 255, 42, 0.2);
+}
+
+.pdf-box input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    background: #0f172a;
+    color: white;
+    border: none;
+}
+
+.pdf-box button {
+    width: 100%;
+    padding: 12px;
+    background: #b7ff2a;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.pdf-box button:hover {
+    background: #a6e22d;
+}
+
+#pdf-response {
+    margin-top: 20px;
+    background: #020617;
+    padding: 15px;
+    border-radius: 8px;
+    min-height: 50px;
+    color: #d1d5db;
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
+    font-family: "Courier New", monospace;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* ===== FEATURES & REWARDS ===== */
+.features,
+.rewards {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.feature-grid,
+.reward-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    padding: 0 60px;
+}
+
+.feature-card,
+.reward-card {
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 12px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.feature-card:hover,
+.reward-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border: 1px solid #b7ff2a;
+}
+
+.reward-card h3 {
+    color: #b7ff2a;
+    margin-bottom: 10px;
+}
+
+.reward-card p {
+    color: #d1d5db;
+    font-size: 14px;
+}
+
+/* ===== QUIZ BOX ===== */
+.quiz-box {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 0 20px rgba(183, 255, 42, 0.2);
+}
+
+.quiz-box #question {
+    color: #b7ff2a;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.quiz-box .options button {
+    width: 100%;
+    padding: 12px;
+    margin: 5px 0;
+    background: #0f172a;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    transition: 0.3s;
+}
+
+.quiz-box .options button:hover {
+    background: #020617;
+}
+
+#result {
+    color: #d1d5db;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    text-align: center;
+    padding: 30px;
+    background: #020617;
+    margin-top: 80px;
+    color: #94a3b8;
+    font-size: 14px;
+}
