@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile - Study Mate AI</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <style>
+        /* PROFILE BOX */
+.profile-box{
+    background:#1e293b;
+    padding:30px;
+    border-radius:12px;
+    max-width:400px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:15px;
+    box-shadow:0 0 20px rgba(183,255,42,0.2);
+}
+.profile-box .avatar{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    border:2px solid #b7ff2a;
+}
+.profile-stats p{
+    color:#d1d5db;
+    font-size:16px;
+    margin:5px 0;
+}
+.profile-box button{
+    background:#b7ff2a;
+    border:none;
+    border-radius:6px;
+    padding:10px 15px;
+    cursor:pointer;
+    font-weight:bold;
+}
+.profile-box button:hover{
+    background:#a6e22d;
+}
+    </style>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+<h1 class="logo">Study Mate AI</h1>
+<div class="nav-links">
+<a href="dashboard.html">Dashboard</a>
+<a href="login.html" id="logoutBtn">Logout</a>
+</div>
+</nav>
+
+<!-- PROFILE HERO -->
+<section class="hero">
+<h2>Welcome, Student!</h2>
+<p>Here’s your profile and learning stats:</p>
+
+<div class="profile-box">
+<img src="assets/avatar.png" alt="Avatar" class="avatar">
+<div class="profile-stats">
+<p><strong>Coins:</strong> 120</p>
+<p><strong>Study Streak:</strong> 5 days</p>
+<p><strong>Achievements:</strong> Beginner Mastery Badge</p>
+</div>
+<button onclick="alert('Edit Profile coming soon!')">Edit Profile</button>
+</div>
+</section>
+
+<script>
+// Logout redirect
+document.getElementById("logoutBtn").addEventListener("click", function(e){
+    e.preventDefault();
+    alert("Logged out! Returning to homepage.");
+    window.location.href = "index.html";
+});
+</script>
+</body>
+</html>
