@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard - Study Mate AI</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+<h1 class="logo">Study Mate AI</h1>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="login.html" id="logoutBtn">Logout</a>
+</div>
+</nav>
+
+<!-- HERO SECTION WITH PDF UPLOAD -->
+<section class="hero">
+<h2 id="dashboard-typing">Welcome to Study Mate AI</h2>
+<p>Access your study tools, track progress, and upload PDFs for AI explanations!</p>
+
+<!-- PDF Upload Box -->
+<div class="pdf-box">
+<input type="file" id="pdfUpload" accept=".pdf">
+<button onclick="explainPDF()">Explain PDF</button>
+<div id="pdf-response"></div>
+</div>
+</section>
+
+<!-- FEATURES SECTION -->
+<section class="features">
+<h2>Your Tools</h2>
+<div class="feature-grid">
+<div class="feature-card">
+<h3>Study Planner</h3>
+<p>Create a personalized study schedule for your courses.</p>
+</div>
+<div class="feature-card">
+<h3>Quiz Generator</h3>
+<p>Generate quizzes and test your knowledge instantly.</p>
+</div>
+<div class="feature-card">
+<h3>Notes Summarizer</h3>
+<p>Quickly summarize lecture notes for revision.</p>
+</div>
+<div class="feature-card">
+<h3>Doubt Solver</h3>
+<p>Ask questions and get AI explanations.</p>
+</div>
+</div>
+</section>
+
+<!-- COINS & REWARDS SECTION -->
+<section class="rewards">
+<h2>Coins & Rewards</h2>
+<div class="reward-cards">
+<div class="reward-card">
+<h3>Daily Login</h3>
+<p>Earn 10 coins for logging in each day.</p>
+</div>
+<div class="reward-card">
+<h3>Complete Quiz</h3>
+<p>Earn 20 coins for finishing any quiz.</p>
+</div>
+<div class="reward-card">
+<h3>Study Streak</h3>
+<p>Earn bonus coins for consecutive study days.</p>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+<p>© 2026 Study Mate AI</p>
+<p>Built by Shalom • Future AI Study Assistant</p>
+</footer>
+
+<script>
+// Dashboard typing effect
+const dashboardText = "Welcome to Study Mate AI";
+let dashIndex = 0;
+function dashboardTyping(){
+    if(dashIndex < dashboardText.length){
+        document.getElementById("dashboard-typing").innerHTML += dashboardText.charAt(dashIndex);
+        dashIndex++;
+        setTimeout(dashboardTyping,50);
+    }
+}
+dashboardTyping();
+
+// Logout redirect
+document.getElementById("logoutBtn").addEventListener("click", function(e){
+    e.preventDefault();
+    alert("Logged out! Returning to homepage.");
+    window.location.href = "index.html";
+});
+
+// PDF Explainer (demo)
+function explainPDF(){
+    const fileInput = document.getElementById("pdfUpload");
+    const responseBox = document.getElementById("pdf-response");
+
+    if(fileInput.files.length === 0){
+        alert("Please select a PDF first!");
+        return;
+    }
+
+    const fileName = fileInput.files[0].name;
+    responseBox.innerHTML = "Processing " + fileName + "...";
+
+    // Demo fake AI explanation
+    setTimeout(() => {
+        responseBox.innerHTML = `
+        <p><strong>AI Explanation:</strong></p>
+        <p>This PDF is about [topic]. Basically, it says that the main ideas are really simple:</p>
+        <ul>
+            <li>Point 1: [Explain like a baby]</li>
+            <li>Point 2: [Explain like a baby]</li>
+            <li>Point 3: [Explain like a baby]</li>
+        </ul>
+        <p>The AI will break down every concept clearly so you understand it easily!</p>
+        `;
+    }, 1500);
+}
+</script>
+
+</body>
+</html>

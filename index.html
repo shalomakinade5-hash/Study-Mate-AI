@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study Mate AI</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+<h1 class="logo">Study Mate AI</h1>
+<div class="nav-links">
+<a href="login.html">Login</a>
+<a href="register.html" class="home-btn">Register</a>
+</div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero">
+<h2 id="typing-text"></h2>
+<p>
+Generate study plans, quizzes, and explanations with AI.
+Study smarter and stay consistent.
+</p>
+<a href="register.html" class="start-btn">Start Studying Free</a>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+<h2>Features</h2>
+<div class="feature-grid">
+<div class="feature-card">
+<h3>AI Study Planner</h3>
+<p>Create smart study schedules for exams.</p>
+</div>
+<div class="feature-card">
+<h3>Quiz Generator</h3>
+<p>Generate quizzes from any topic instantly.</p>
+</div>
+<div class="feature-card">
+<h3>Notes Summarizer</h3>
+<p>Turn long notes into quick revision points.</p>
+</div>
+<div class="feature-card">
+<h3>AI Doubt Solver</h3>
+<p>Ask questions and get clear explanations.</p>
+</div>
+</div>
+</section>
+
+<!-- AI DEMO -->
+<section class="ai-demo">
+<h2>Try Study Mate AI</h2>
+<div class="ai-box">
+<input 
+type="text" 
+id="question" 
+placeholder="Ask a study question... e.g. What is photosynthesis?"
+>
+<button onclick="askAI()">Ask AI</button>
+<div id="ai-response"></div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+<p>© 2026 Study Mate AI</p>
+<p>Built by Shalom • Future AI Study Assistant</p>
+</footer>
+
+<script>
+// Typing Effect
+const text = "Study Smarter With AI";
+let index = 0;
+function typeEffect(){
+if(index < text.length){
+document.getElementById("typing-text").innerHTML += text.charAt(index);
+index++;
+setTimeout(typeEffect,80);
+}
+}
+typeEffect();
+
+// Fake AI Demo
+function askAI(){
+const question = document.getElementById("question").value;
+const responseBox = document.getElementById("ai-response");
+responseBox.innerHTML = "Thinking...";
+setTimeout(function(){
+let response = "";
+if(question.toLowerCase().includes("photosynthesis")){
+response = "Photosynthesis is the process by which plants convert sunlight, water and carbon dioxide into glucose and oxygen.";
+}
+else if(question.toLowerCase().includes("derivative")){
+response = "A derivative measures how a function changes as its input changes. It represents the rate of change.";
+}
+else{
+response = "Study Mate AI would normally generate an AI explanation here. Full AI integration is coming soon.";
+}
+responseBox.innerHTML = response;
+},1000);
+}
+</script>
+
+</body>
+</html>
